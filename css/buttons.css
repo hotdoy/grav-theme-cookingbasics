@@ -1,0 +1,216 @@
+/*LINK*/
+
+a.btn-link {
+	user-select: none;
+	color: var(--color-hl);
+	font-family: var(--font-alt);
+}
+
+a.btn-link:after {
+	content: "";
+	width: 12px;
+	height: 12px;
+	background-image: url(../images/buttons/chevron_right-green.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	user-select: none;
+	transform: translate(5px, 1px);
+	transition: all 0.2s;
+}
+
+a.btn-link:hover:after {
+	transform: translate(10px, 1px);
+}
+
+
+
+
+
+/*DOWN*/
+
+a.btn-down {
+	user-select: none;
+	color: var(--color-hl);
+	font-family: var(--font-alt);
+	font-size: 14px
+}
+
+a.btn-down:after {
+	content: "";
+	width: 10px;
+	height: 10px;
+	background-image: url(../images/buttons/arrow_down-green.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	user-select: none;
+	transform: translate(5px, 1px);
+	transition: all 0.2s;
+}
+
+a.btn-down:hover:after {
+	transform: translate(5px, 3px);
+}
+
+
+
+
+
+/*EXT*/
+
+a.btn-ext {
+	user-select: none;
+	color: var(--color-hl);
+	font-family: var(--font-alt);
+}
+
+a.btn-ext:after {
+	content: "";
+	width: 12px;
+	height: 12px;
+	background-image: url(../images/buttons/open_in_new-green.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	user-select: none;
+	transform: translate(7px, 1px);
+	transition: all 0.2s;
+}
+
+a.btn-ext:hover:after {
+	transform: translate(12px, 1px);
+}
+
+
+
+
+
+/*BACK*/
+
+a.btn-back {
+	user-select: none;
+	color: var(--color-hl);
+	font-family: var(--font-alt);
+}
+
+a.btn-back:before {	
+	content: "";
+	width: 12px;
+	height: 12px;
+	background-image: url(../images/buttons/chevron_left-green.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	user-select: none;
+	transform: translate(0px, 0px);
+	transition: all 0.2s;
+}
+
+a.btn-back:hover:before {
+	transform: translate(-5px, 0px);
+}
+
+
+
+
+
+/*EMAIL*/
+
+a.btn-mail {
+	display: inline-block;
+	user-select: none;
+	color: var(--color-hl);
+	font-family: var(--font-alt);
+	transform: translateX(7px);
+}
+
+a.btn-mail:before {
+	content: "";
+	width: 18px;
+	height: 18px;
+	background-image: url(../images/buttons/mail-green.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	user-select: none;
+	transform: translate(-5px, 5px);
+	transition: all 0.2s;
+}
+
+
+
+
+
+/*TEL*/
+a.btn-tel {
+	display: inline-block;
+	user-select: none;
+	color: var(--color-hl);
+	font-family: var(--font-alt);
+	transform: translateX(7px);
+}
+
+a.btn-tel:before {
+    content: "";
+    width: 17px;
+    height: 16px;
+    background-image: url(/user/themes/scorpion/images/buttons/phone-green.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    user-select: none;
+    transform: translate(-2px,2px);
+}
+
+
+
+
+
+/*MESSENGER*/
+
+a.btn-messenger {
+	display: inline-block;
+	user-select: none;
+	color: var(--color-hl);
+	font-family: var(--font-alt);
+	transform: translateX(5px);
+}
+
+a.btn-messenger:before {
+	content: "";
+	width: 18px;
+	height: 18px;
+	background-image: url(../images/buttons/messenger-green.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	user-select: none;
+	transform: translate(-3px, 4px);
+}
+
+
+
+
+
+/*SOLID*/
+
+a.btn-solid,
+.content a.btn-solid {
+	user-select: none;
+	display: inline-block;
+	color: var(--color-hl-inverted);
+	background-color: var(--color-hl);
+	font-family: var(--font-alt);
+	padding: 15px 25px;
+    border-radius: 9999px;
+    transition: all 0.2s; 
+}
+
+a.btn-solid:hover {
+	transform: translateY(-2px);
+}
+
+a.btn-solid:hover:active {
+	transform: translateY(0px);
+}

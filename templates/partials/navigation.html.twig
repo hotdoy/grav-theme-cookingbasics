@@ -1,0 +1,6 @@
+{% macro nav(pages) %}
+    {% for p in pages.children.visible %}
+        {% set current_page = (p.active or p.activeChild) ? 'nav__link--selected' : '' %}
+        <a class="nav__link {{ current_page }}" href="{{ p.url }}">{{ p.menu }}</a>
+    {% endfor %}
+{% endmacro %}

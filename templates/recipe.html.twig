@@ -1,0 +1,44 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+	<main>
+		<h1 class="recipe__title">{{ page.title }}</h1>
+		<h2 class="recipe__description">{{ page.header.description }}</h2>
+		<div class="recipe__media">{{ page.media.images|first().html }}</div>
+
+		<div class="recipe__wrapper">
+
+			<svg class="recipe__marker" width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M11 6.5L-0.250001 12.9952L-0.25 0.00480889L11 6.5Z" fill="#FF0000"/>
+			</svg>
+
+			<div class="recipe__time">
+				<h2>Time</h2>
+				<li>Prep: {{ page.header.preptime }} min</li>
+				<li>Cook: {{ page.header.cooktime }} min</li>
+				<li>Total: {{ page.header.totaltime }} min</li>
+			</div>
+
+			<div class="recipe__ingredients">
+				<h2>Ingredients</h2>
+				{% for ingredient in page.header.ingredients %}
+				<li>{{ ingredient.text }}</li>
+				{% endfor %}
+			</div>
+			
+			<div class="recipe__instructions">
+				<h2>Instructions</h2>
+				{% for step in page.header.steps %}
+				<h3>{{ step.title }}</h3>
+				{{ step.content|markdown }}
+				{% endfor %}
+
+			</div>
+		</div>
+	</main>
+{% endblock %}
+
+
+
+

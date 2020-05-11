@@ -1,0 +1,136 @@
+html{
+	--splash-height:100vh;
+}
+
+.module--splash{
+	overflow: hidden;
+	min-height: 100vh;
+	min-height: var(--splash-height);
+}
+
+@media (min-width: 735px) {
+	.module--splash{
+		min-height: 100vh;
+		min-height: var(--splash-height-landscape, var(--splash-height););
+	}
+}
+
+.splash__image,
+.splash__video{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-position: center;
+	object-fit: cover;
+	z-index: 1001;
+	border-radius: 0;
+}
+
+.splash__veil{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #313131;
+	z-index: 1002;
+}
+
+.splash__content-ctn{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: var(--width-site);
+	width: 100%;
+	padding-top: var(--rhythm);
+	padding-bottom: var(--rhythm);
+	padding-left: var(--gutter);
+	padding-right: var(--gutter);
+	z-index: 1003;
+}
+
+.splash__content-ctn--vtop{
+	display: flex;
+	align-items: flex-start;
+	padding-top: var(--nav-height);
+}
+
+/*sync h1 margins with default page template h1*/
+.splash__content-ctn--vtop h1{
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+.splash__content-ctn--vcenter{
+	display: flex;
+	align-items: center;
+}
+
+.splash__content-ctn--vbottom{
+	display: flex;
+	align-items: flex-end;
+}
+
+.splash__content-ctn--hleft>*,
+.splash__content-ctn--hleft>*>*,
+.splash__content-ctn--hleft>*>*>*{
+	text-align: left;
+	margin-right: auto;
+}
+
+.splash__content-ctn--hcenter>*,
+.splash__content-ctn--hcenter>*>*,
+.splash__content-ctn--hcenter>*>*>*{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.splash__content-ctn--hright>*,
+.splash__content-ctn--hright>*>*,
+.splash__content-ctn--hright>*>*>*{
+	text-align: left;
+	margin-left: auto;
+}
+
+/*Visual fix for text aligned in the screen center*/
+.splash__content-ctn--hcenter.splash__content-ctn--vcenter{
+	margin-top: -3rem;
+}
+
+/*reset [tight] margins */
+.splash__content .tight {
+    width: 100%;
+    max-width: var(--width-tight);
+    margin-left: 0; 
+    margin-right: 0; 
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*[tight] centered*/
+.splash__content-ctn--hcenter .splash__content .tight {
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+/*[tight] left*/
+.splash__content-ctn--hright .splash__content .tight {
+    margin-left: 0; 
+    margin-right: auto; 
+}
+/*[tight] right*/
+.splash__content-ctn--hright .splash__content .tight {
+    margin-left: auto; 
+    margin-right: 0; 
+}
+
+.module--splash h1,
+.module--splash h2,
+.module--splash h3{
+	margin-top: 0;
+}

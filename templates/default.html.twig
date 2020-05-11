@@ -1,0 +1,9 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	{% if page.content %}
+	<section class="module content">
+	{{ page.content }}
+	</section>
+	{% endif %}
+{% endblock %}

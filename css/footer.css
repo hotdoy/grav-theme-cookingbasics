@@ -1,0 +1,146 @@
+footer{
+	position: relative;
+	margin: var(--rhythm) 0 0 0;
+	padding: calc(var(--rhythm)/2) var(--gutter) 1rem var(--gutter);
+	background-color: #000;
+	color: #fff;
+	font-size: 14px;
+}
+
+.footer__ctn {
+	width: 100%;
+	max-width: var(--width-site);
+	margin: 0 auto;
+}
+
+
+
+
+
+/*RESET*/
+.footer__nav ul {
+	margin: 0 0 0 0;
+	list-style: none;
+	list-style-image:  none;
+}
+
+/*PRIMARY*/
+.footer__nav ul {
+	font-size: 16px;
+}
+
+@media (min-width: 735px) {
+	.footer__nav ul {
+		display: flex;	
+	}
+}
+
+.footer__nav ul li {
+	padding: 1rem 1rem 0 0;
+}
+
+.footer__nav .active {
+	text-decoration: underline;
+}
+
+/*SECONDARY*/
+.footer__nav ul ul {
+	opacity: 0.7;
+	display: block;
+	padding: 0;
+	font-size: 12px;
+}
+
+.footer__nav ul ul li {
+	padding: 0.2rem 0 0 0;
+}
+
+
+
+
+/*MAILCHIMP*/
+/*#mc_embed_signup {
+	margin-top: 2rem;
+	width: 100%;
+	max-width: 100%;
+	font-size: 12px;
+}
+@media (min-width: 735px) {
+	#mc_embed_signup {
+		max-width: 300px;
+	}
+}
+
+#mc_embed_signup h2 {
+	font-size: 12px;
+	font-family: var(--font-base);
+	max-width: 80%;
+}
+
+#mc_embed_signup form input,
+#mc_embed_signup form input::placeholder {
+	font-size: 12px;
+	font-family: var(--font-base);
+	box-sizing: border-box;
+	color: #313131;
+}
+
+#mc_embed_signup form input::placeholder {
+	color: #c1c1c1;
+}
+
+#mc_embed_signup input[type=email],
+#mc_embed_signup input[type=text] {
+	width: 100%;
+    margin-top: 10px;
+    border: 2px solid #585858;
+    padding: 10px;
+    background-color: #313131;
+    border-radius: 4px;
+    color: #f1f1f1;
+}
+
+#mc_embed_signup input.email:focus {
+	outline: none;
+	border-color: #a7a7a7;
+}
+
+#mc_embed_signup input.button {
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px solid #484848;
+    background-color: #484848;
+    width: 100%;
+}
+@media (min-width: 735px) {
+	#mc_embed_signup input.button {
+		width: auto;
+	}
+}
+#mc_embed_signup input.button:hover {
+	border-color: #585858;
+}*/
+
+
+/*LEGAL*/
+.footer__legal {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	opacity: 0.5;
+	margin-top: 2rem;
+}
+
+.footer__legal .copyright {
+	max-width: 70%;
+	font-size: 10px;
+	line-height: 1.2;
+}
+
+.footer__legal .credit {
+	width: 49px;
+	height: 17px;
+}

@@ -1,0 +1,45 @@
+{% if page.template == "recipe" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "{{ page.title }}",
+  "image": [
+{% for image in page.media.images %}
+"{{ uri.base() ~ image.url() }}"{% if not loop.last %},{% endif %}
+{% endfor %}
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+  "url": "{{ base_url_absolute }}",
+  "logo": "{{ theme.organization_logo }}"
+  },
+  "datePublished": "{{ page.date|date('Y-m-d') }}",
+  "description": "{{ page.header.description }}",
+  "prepTime": "PT{{ page.header.preptime }}M",
+  "cookTime": "PT{{ page.header.cooktime }}M",
+  "totalTime": "PT{{ page.header.totaltime }}M",
+  "keywords": "{% for tag in page.taxonomy.tag %}{{ tag }}{% if not loop.last %},{% endif %}{% endfor %}",
+  "recipeYield": "{{ page.header.yield }}",
+  "recipeCategory": "{% for category in page.taxonomy.category %}{{ category }}{% if not loop.last %},{% endif %}{% endfor %}",
+  "recipeCuisine": "{% for cuisine in page.taxonomy.cuisine %}{{ cuisine }}{% if not loop.last %},{% endif %}{% endfor %}",
+  "recipeIngredient": [
+    {% for ingredient in page.header.ingredients %}
+    "{{ ingredient.text }}"{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ],
+  "recipeInstructions": [
+    {% for step in page.header.steps %}
+    {
+    "@type": "HowToStep",
+    "name": "{{ step.title }}",
+    "text": "{{ step.content|markdown|striptags }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ] 
+}
+</script>
+
+{% endif %}

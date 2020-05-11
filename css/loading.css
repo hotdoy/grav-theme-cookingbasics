@@ -1,0 +1,30 @@
+#loader{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.loader--transition{
+	background-color: var(--color-bg);
+	z-index: 4999;	
+}
+
+.loaded #loader.loader--transition{
+	-webkit-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s; 
+	opacity: 0;
+	visibility: hidden;
+}
+
+@media (min-width: 735px) {
+	.exiting .module,
+	.exiting footer{
+		transition-delay: 0.1s;
+		transition-duration: 0.2s;
+		transform: translateY(20px);
+		opacity: 0;
+	}
+}

@@ -1,0 +1,42 @@
+{{dump(page)}}
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+
+<head>
+
+{% block metadata %}{% include 'partials/metadata.html.twig' %}{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ page.url(true, true) }}" />{% endblock %}
+{% block favicon %}{% include 'partials/favicon.html.twig' %}{% endblock %}
+{% block breadcrumblist %}{% include 'schemas/breadcrumblist.html.twig' %}{% endblock %}
+{% block guidedrecipe %}{% include 'schemas/guidedrecipe.html.twig' %}{% endblock %}
+{% block organization %}{% include 'schemas/organization.html.twig' %}{% endblock %}
+{% block stylesheets %}{% include 'partials/stylesheets.html.twig' %}{% endblock %}
+{% block javascripts %}{% include 'partials/javascripts.html.twig' %}{% endblock %}
+
+{% if theme.gtm_container_id %}
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+{% endif %}
+
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+{% block gtm_head %}{% include 'partials/gtm-head.html.twig' %}{% endblock %}
+
+</head>
+
+<body class="{{ page.template }} {{ page.header.body_classes }} loading">
+
+{% block header %}{% include 'partials/header.html.twig' %}{% endblock %}
+{# {% block loading %}{% include 'partials/loading.html.twig' %}{% endblock %} #}
+{% block content %}{% endblock %}
+{% block footer %}{% include 'partials/footer.html.twig' %}{% endblock %}
+{% block announcements %}{% include 'partials/announcement.html.twig' %}{% endblock %}
+{% block bottom %}{{ assets.js('bottom')|raw }}{% endblock %}
+{% block gtm_body %}{% include 'partials/gtm-body.html.twig' %}{% endblock %}
+<script data-ad-client="ca-pub-8079759965001997" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</body>
+
+</html>

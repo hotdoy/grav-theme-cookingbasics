@@ -1,0 +1,98 @@
+.recipe main {
+	max-width: var(--width-tight);
+	width: 100%;
+	margin: 0 auto;
+}
+
+.recipe__title {
+	font-family: var(--font-base);
+	font-weight: 900;
+	font-size: 48px;
+	line-height: 1.2;
+	margin: 40px 0;
+	padding: 0 20px;
+}
+
+.recipe__description {
+	font-family: var(--font-alt);
+	font-size: 14px;
+	margin: 40px 0;
+	padding: 0 20px;
+}
+
+.recipe__media {
+	margin: 40px 0 0 0;
+}
+
+.recipe__media img {
+	width: 100%;
+}
+
+.recipe__ingredients h2{
+	font-size: 14px;
+	font-weight: 400;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.recipe__ingredients {
+	font-family: var(--font-base);
+	font-size: 14px;
+	font-weight: 700;
+	list-style: none;
+	line-height: 1.6;
+	padding: 0 20px;
+}
+
+
+.recipe__marker {
+	position: sticky;
+	top: 30%;
+	padding-top: 40px;
+}
+
+.recipe__time h2{
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.recipe__time {
+	font-family: var(--font-base);
+	font-size: 14px;
+	font-weight: 700;
+	list-style: none;
+	line-height: 1.6;
+	padding: 0 20px;
+	position: relative;
+	margin-top: -16px;
+
+}
+
+.recipe__instructions h2{
+	font-size: 14px;
+	font-weight: 400;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.recipe__instructions h3{
+	font-family: var(--font-base);
+	font-size: 14px;
+	font-weight: 700;
+	margin-top: 20px;
+}
+
+.recipe__instructions {
+	font-family: var(--font-base);
+	font-size: 14px;
+	list-style: none;
+	line-height: 1.6;
+	padding: 0 20px;
+}
+
+.recipe__instructions p {
+	font-family: var(--font-base);
+	font-size: 14px;
+	margin-top: 10px;
+}

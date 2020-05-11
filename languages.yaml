@@ -1,0 +1,24 @@
+fr:
+    THEME:
+        MAILCHIMP:
+            TITLE: "On sait pas vraiment quoi faire de votre email, mais on le prendrait quand même."
+            EMAIL: "Email"
+            SUBMIT: "S'inscrire"
+        LEGAL:
+            COPYRIGHT: "COOKINGBASICS"
+            DISCLAIMER: "" 
+        ERROR:
+            TITLE: "404"
+            CONTENT: "Oh non! Nous n'avons pas trouvé la page que vous cherchez."
+en:
+    THEME:
+        MAILCHIMP:
+            TITLE: "We really don't know what to do with your email but we'll gladly take it."
+            EMAIL: "Email"
+            SUBMIT: "Subscribe"
+        LEGAL:
+            COPYRIGHT: "COOKINGBASICS"
+            DISCLAIMER: ""  
+        ERROR:
+            TITLE: "404"
+            CONTENT: "Oh no! We couldn't find the page you were looking for."

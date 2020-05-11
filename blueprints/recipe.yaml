@@ -1,0 +1,61 @@
+title: Recipe
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            content:
+              unset@: true
+
+            header.header_media:
+              type: pagemediaselect
+              label: Header Media
+
+            header.header_media_alt:
+              type: text
+              label: Header Media Alt
+
+            header.description:
+              type: text
+              label: Description
+
+            header.yield:
+              type: text
+              label: Yield
+
+            header.preptime:
+              type: number
+              label: Prep time
+                        
+            header.cooktime:
+              type: number
+              label: Cook time
+
+            header.totaltime:
+              type: number
+              label: Total time
+
+            header.ingredients:
+              name: ingredients
+              type: list
+              label: Ingredients
+              style: vertival
+              fields:
+                .text:
+                  type: text
+
+            header.steps:
+              name: steps
+              type: list
+              label: Steps
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                .content: 
+                  type: markdown
+                  label: Content
