@@ -1,7 +1,17 @@
+.recipe__wrapper {
+	display: flex;
+}
+
+
+
+/*RECIPE*/
+
 .recipe main {
 	max-width: var(--width-tight);
 	width: 100%;
 	margin: 0 auto;
+	padding: 0 0 var(--rhythm) 0;
+    border-bottom: 1px solid black;
 }
 
 .recipe__title {
@@ -15,7 +25,7 @@
 
 .recipe__description {
 	font-family: var(--font-alt);
-	font-size: 14px;
+	font-size: 16px;
 	margin: 40px 0;
 	padding: 0 20px;
 }
@@ -29,7 +39,7 @@
 }
 
 .recipe__ingredients h2{
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 	margin-top: 40px;
 	margin-bottom: 20px;
@@ -52,7 +62,7 @@
 }
 
 .recipe__time h2{
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 	margin-bottom: 20px;
 }
@@ -70,7 +80,7 @@
 }
 
 .recipe__instructions h2{
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 	margin-top: 40px;
 	margin-bottom: 20px;
@@ -95,4 +105,112 @@
 	font-family: var(--font-base);
 	font-size: 14px;
 	margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/*ADS*/
+
+/*.ad__skyscraper {
+	display: none;
+	position: sticky;
+	width: 300px;
+	height: 600px;
+	background-color: red;
+	margin: 0 auto 0 0;
+	top: 0;
+}
+
+@media (min-width: 1240px) {
+	.ad__skyscraper {
+		display: block;
+	}	
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*RELATED*/
+
+
+.recipe__related {
+	max-width: var(--width-body);
+	width: 100%;
+	margin: var(--rhythm) auto 0 auto;
+}
+
+.recipe__related h2 {
+	font-family: var(--font-base);
+	font-weight: 900;
+	font-size: 48px;
+	line-height: 1.2;
+	margin: 40px 0;
+	padding: 0 20px;
+}
+
+
+
+
+
+.recipe-grid {
+	width: 100%;
+	max-width: var(--width-body);
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr; 
+	grid-gap: 10px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.recipe-card a {
+	display: flex;
+
+}
+
+.recipe-card__text-ctn {
+
+}
+
+.recipe-card__title {
+	font-family: var(--font-base);
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 1.2;
+}
+
+.recipe-card__description {
+	font-family: var(--font-alt);
+	font-size: 16px;
+	margin-top: 10px;
+	padding-right: 10px;
+}
+
+.recipe-card__thumb {
+	width: 100px;
+	height: 100px;
+	flex-shrink: 0;
+}
+
+.recipe-card__thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }

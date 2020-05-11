@@ -8,9 +8,11 @@
 {% block metadata %}{% include 'partials/metadata.html.twig' %}{% endblock %}
 {% block canonical %}<link rel="canonical" href="{{ page.url(true, true) }}" />{% endblock %}
 {% block favicon %}{% include 'partials/favicon.html.twig' %}{% endblock %}
+
 {% block breadcrumblist %}{% include 'schemas/breadcrumblist.html.twig' %}{% endblock %}
 {% block guidedrecipe %}{% include 'schemas/guidedrecipe.html.twig' %}{% endblock %}
 {% block organization %}{% include 'schemas/organization.html.twig' %}{% endblock %}
+
 {% block stylesheets %}{% include 'partials/stylesheets.html.twig' %}{% endblock %}
 {% block javascripts %}{% include 'partials/javascripts.html.twig' %}{% endblock %}
 
@@ -36,7 +38,7 @@
 {% block announcements %}{% include 'partials/announcement.html.twig' %}{% endblock %}
 {% block bottom %}{{ assets.js('bottom')|raw }}{% endblock %}
 {% block gtm_body %}{% include 'partials/gtm-body.html.twig' %}{% endblock %}
-<script data-ad-client="ca-pub-8079759965001997" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{# <script data-ad-client="ca-pub-8079759965001997" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> #}
 </body>
 
 </html>
