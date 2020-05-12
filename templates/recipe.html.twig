@@ -1,14 +1,28 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
+
+<!-- Ad Recipe Head -->
+<div class="ad ad--recipe-header">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<ins class="adsbygoogle"
+	    style="display:block"
+	    data-ad-client="ca-pub-8079759965001997"
+	    data-ad-slot="6128043745"
+	    data-ad-format="auto"
+	    data-full-width-responsive="true"></ins>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+</div>
+
 <main>
 	<h1 class="recipe__title">{{ page.title }}</h1>
 	<h2 class="recipe__description">{{ page.header.description }}</h2>
-	<div class="recipe__media">{{ page.media.images|first().html }}</div>
-
-	<svg class="recipe__marker" width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path d="M11 6.5L-0.250001 12.9952L-0.25 0.00480889L11 6.5Z" fill="#FF0000"></path>
-	</svg>
+	
+	{% if page.media.images|first() %}
+	<div class="recipe__media">{{ page.media.images|first().cropResize(1400,0).html('', page.header.header_media_alt) }}</div>
+	{% endif %}
 
 	<div class="recipe__time">
 		<h2>Time</h2>
@@ -18,6 +32,9 @@
 	</div>
 
 	<div class="recipe__ingredients">
+		<svg class="recipe__marker" width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M11 6.5L-0.250001 12.9952L-0.25 0.00480889L11 6.5Z" fill="#FF0000"></path>
+		</svg>
 		<h2>Ingredients</h2>
 		{% for ingredient in page.header.ingredients %}
 		<li>{{ ingredient.text }}</li>
@@ -25,39 +42,58 @@
 	</div>
 	
 	<div class="recipe__instructions">
+		<svg class="recipe__marker" width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M11 6.5L-0.250001 12.9952L-0.25 0.00480889L11 6.5Z" fill="#FF0000"></path>
+		</svg>
 		<h2>Instructions</h2>
 		{% for step in page.header.steps %}
 		<h3>{{ step.title }}</h3>
 		{{ step.content|markdown }}
 		{% endfor %}
 	</div>
+	<div class="recipe__end">
+		{% include 'partials/thatsit.html.twig' %}
+	</div>
+
 </main>
 
+	<!-- Ad Recipe End -->
+	<div class="ad ad--recipe-end">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle"
+	    	style="display:block"
+	    	data-ad-client="ca-pub-8079759965001997"
+	    	data-ad-slot="3671456703"
+	    	data-ad-format="auto"
+	    	data-full-width-responsive="true">
+	    </ins>
+		<script>
+		     (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
 
+<section class="recipe__related">
 
+	<h2>Random picks</h2>
 
-	<section class="recipe__related">
+	{% set options = { items: {'@page':'/recipes'}, 'order': {'by': 'random'}, 'limit': '5'} %}
+	{% set recipes = page.collection(options) %}
 
-		<h2>Recently added recipes</h2>
+	<div class="recipe-grid">
+	{% for recipe in recipes if recipe.title != page.title %}
+		<article class="recipe-card">
+			<a href="{{ recipe.url }}">
+				<div class="recipe-card__text-ctn">
+					<div class="recipe-card__title">{{ recipe.title }}</div>
+					<div class="recipe-card__description">{{ recipe.header.description }}</div>
+				</div>
+				<div class="recipe-card__thumb">{{ recipe.media.images|first().cropResize(200,200).html('', recipe.header.header_media_alt) }}</div>
+			</a>
+		</article>
+	{% endfor %}
+	</div>
 
-		{% set options = { items: {'@page':'/recipes'}, 'order': {'by': 'date', 'dir': 'desc'}} %}
-		{% set recipes = page.collection(options) %}
-
-		<div class="recipe-grid">
-		{% for recipe in recipes %}
-			<article class="recipe-card">
-				<a href="{{ recipe.url }}">
-					<div class="recipe-card__text-ctn">
-						<div class="recipe-card__title">{{ recipe.title }}</div>
-						<div class="recipe-card__description">{{ recipe.header.description }}</div>
-					</div>
-					<div class="recipe-card__thumb">{{ recipe.media.images|first().html }}</div>
-				</a>
-			</article>
-		{% endfor %}
-		</div>
-
-	</section>
+</section>
 
 {% endblock %}
 

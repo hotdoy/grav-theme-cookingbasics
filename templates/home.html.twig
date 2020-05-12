@@ -1,0 +1,35 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+
+<section class="recipe__related">
+
+	<h2>Latests</h2>
+
+	{% set options = { items: {'@page':'/recipes'}, 'order': {'by': 'date', 'dir': 'desc'}} %}
+	{% set recipes = page.collection(options) %}
+
+	<div class="recipe-grid">
+	{% for recipe in recipes if recipe.title != page.title %}
+
+		{% set is_big = loop.first ? ' recipe-card--big' : ''%}
+
+		<article class="recipe-card{{ is_big }}">
+			<a href="{{ recipe.url }}">
+				<div class="recipe-card__text-ctn">
+					<div class="recipe-card__title">{{ recipe.title }}</div>
+					<div class="recipe-card__description">{{ recipe.header.description }}</div>
+				</div>
+				{% if is_big %}
+				<div class="recipe-card__thumb">{{ recipe.media.images|first().cropResize(1000,1000).html('', recipe.header.header_media_alt) }}</div>
+				{% else %}
+				<div class="recipe-card__thumb">{{ recipe.media.images|first().cropResize(200,200).html('', recipe.header.header_media_alt) }}</div>
+				{% endif %}
+			</a>
+		</article>
+	{% endfor %}
+	</div>
+
+</section>
+{% endblock %}
